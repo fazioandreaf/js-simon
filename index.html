@@ -15,9 +15,15 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 <body>
     <div class="container">
 
-        <input type="button" value="Numeri noti" onclick="rnd()">
-        <span id="numerinoti"> </span>
+        <input type="button" value="Numeri noti" onclick="rnd(),timeOut()">
+        <div id="numerinoti"> </div>
+        <div id="countdownNumber"> </div>
+        <input type="button" value="Clicca per inserire i numeri" onclick="promptnumber()">
+        <div id="nRandomRight"></div>
+        <div id="nRandomWrong"></div>
     </div>
+
+
 
     <script src="js/main.js"></script>
 </body>
