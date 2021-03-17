@@ -14,8 +14,8 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 </head>
 <body>
     <div class="container">
-
-        <input type="button" value="Numeri noti" onclick="rnd(),timeOut()">
+        <div style="width: 100%; text-align: center;" id="contatore"></div>
+        <input type="button" value="Numeri noti" onclick="rnd(),alertTimeout, contatore()">
         <div id="numerinoti"> </div>
         <div id="countdownNumber"> </div>
         <input type="button" value="Clicca per inserire i numeri" onclick="promptnumber()">

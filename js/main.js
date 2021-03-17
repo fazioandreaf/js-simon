@@ -1,6 +1,6 @@
 // Un alert() espone 5 numeri generati casualmente
 function ArrRndNumUnici(maxLenghtArr,arr,max,min) {
-    for (i=0;i<maxLenghtArr;i++) {
+    while (arr.length<maxLenghtArr) {
         let value= Math.floor(Math.random()*(max - min) + min);
         if (!arr.includes(value)){
               arr.push(value);
@@ -27,6 +27,8 @@ function rnd(){
 nRandomRight=[];
 nRandomWrong=[];
 function promptnumber(){
+    t='Tempo scaduto' ;
+    clearTimeout(alertTimeout);
     inner('numerinoti','');
     nRandomRight=[];
     nRandomWrong=[];
@@ -45,13 +47,24 @@ function promptnumber(){
     nRandom=[];
     
     inner('nRandomRight','Numeri azzeccati = ' + nRandomRight + '<br>Tot = ' + nRandomRight.lentgh);
-    inner('nRandomWrong','Numeri errati =' + nRandomWrong + '<br>Tot = ' + nRandomWrong.lentgh);
+    inner('nRandomWrong','Numeri errati =' + nRandomWrong + '<br>Tot = ' + nRandomWrong.length);
     console.log(nRandom,nRandomRight,nRandomWrong)
 }
 function logger(){
     alert('Basta giocare con le bambole! Inserisci i numeri!')    
 }
-function timeOut(){
-setTimeout(logger,10000)
+var x=30000;
+var alertTimeout= function timeOut(){
+setTimeout(logger,x)
 }
-    
+var t=30;
+function contatore(){
+    let value =document.getElementById('contatore');
+    var timer=setInterval(function(){
+        value.innerHTML=t;
+        t=t-1;
+        if(t<0){
+        clearInterval(timer);
+        }},1000)
+}
+
